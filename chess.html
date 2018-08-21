@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Chess Board with CSS Grid</title>
+
+
+    <style>
+        :root {
+            --chess-bg-color: #000;
+            --chessman-color: #e34234;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-gap: 0;
+            grid-template-columns: repeat(8, [col] 10vw);
+            grid-template-rows: repeat(8, [row] 10vw);
+            width: 80vw;
+            border: 3px solid #000;
+            box-shadow: 0 5px 8px #777;
+            justify-content: center;
+            align-content: center;
+            margin: 0 auto;
+
+        }
+
+        .grid b {
+            font-size: calc(5vw);
+            padding-top: 1vw;
+            text-align: center;
+        }
+
+        .grid b span {
+            color: var(--chessman-color);
+        }
+
+        .grid b:nth-child(-n+8):nth-child(even) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+8):nth-child(-n+16):nth-child(odd) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+17):nth-child(-n+24):nth-child(even) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+25):nth-child(-n+32):nth-child(odd) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+33):nth-child(-n+40):nth-child(even) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+41):nth-child(-n+48):nth-child(odd) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+49):nth-child(-n+56):nth-child(even) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+57):nth-child(-n+64):nth-child(odd) {
+            background: var(--chess-bg-color);
+        }
+
+        @supports not ((background: var(--chess-bg-color)) or (display: grid)) {
+            .warning {
+                display: block !important;
+            }
+        }
+
+        .warning {
+            color: crimson;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Responsive Chess Board</h1>
+<p>Demo of a layout using CSS Grid and CSS Variables.</p>
+<p class="warning">Your browser does not support new CSS features. Please upgrade your browser.</p>
+
+<main class="grid">
+    <b><span>&#9820;</span></b>
+    <b><span>&#9822;</span></b>
+    <b><span>&#9821;</span></b>
+    <b><span>&#9819;</span></b>
+    <b><span>&#9818;</span></b>
+    <b><span>&#9821;</span></b>
+    <b><span>&#9822;</span></b>
+    <b><span>&#9820;</span></b>
+
+    <b><span>&#9823;</span></b>
+    <b><span>&#9823;</span></b>
+    <b><span>&#9823;</span></b>
+    <b><span>&#9823;</span></b>
+    <b><span>&#9823;</span></b>
+    <b><span>&#9823;</span></b>
+    <b><span>&#9823;</span></b>
+    <b><span>&#9823;</span></b>
+
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+
+    <b><span>&#9817;</span></b>
+    <b><span>&#9817;</span></b>
+    <b><span>&#9817;</span></b>
+    <b><span>&#9817;</span></b>
+    <b><span>&#9817;</span></b>
+    <b><span>&#9817;</span></b>
+    <b><span>&#9817;</span></b>
+    <b><span>&#9817;</span></b>
+
+    <b><span>&#9814;</span></b>
+    <b><span>&#9816;</span></b>
+    <b><span>&#9815;</span></b>
+    <b><span>&#9813;</span></b>
+    <b><span>&#9812;</span></b>
+    <b><span>&#9815;</span></b>
+    <b><span>&#9816;</span></b>
+    <b><span>&#9814;</span></b>
+</main>
+
+</body>
+</html>
